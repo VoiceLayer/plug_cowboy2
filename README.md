@@ -26,7 +26,7 @@ available at https://github.com/potatosalad/plug/tree/cowboy2
 ### Plug
 
 A sample application with plug is available at
-https://github.com/voicelayer/plug_http2_example
+https://github.com/voicelayer/plug_cowboy2_example
 
 ### Phoenix
 
@@ -34,4 +34,4 @@ In order to use Phoenix, the [phoenix_cowboy2]
 (https://github.com/voicelayer/phoenix_cowboy2) application is required.
 
 A sample application with plug is available at
-https://github.com/voicelayer/phoenix_http2_example
+https://github.com/voicelayer/phoenix_cowboy2_example
