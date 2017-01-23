@@ -113,11 +113,16 @@ defmodule Plug.Adapters.Cowboy2.Conn do
   end
 
   defp to_headers_map(headers) when is_list(headers) do
-    :maps.from_list(headers)
+    headers
+    |> :maps.from_list()
+    |> to_headers_map()
   end
 
   defp to_headers_map(headers) when is_map(headers) do
-    headers
+    case Map.get(headers, "set-cookie") do
+      set_cookie when is_binary(set_cookie) -> Map.put(headers, "set-cookie", [set_cookie])
+      _                                     -> headers
+    end
   end
 
   ## Multipart
