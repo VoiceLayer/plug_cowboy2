@@ -46,7 +46,7 @@ defmodule Plug.Adapters.Cowboy2.Conn do
         is_integer(length) -> length
       end
 
-    body = {:sendfile, offset, length, path}
+    body = File.read!(path)
 
     headers = to_headers_map(headers)
 
