@@ -7,7 +7,7 @@ defmodule Plug.Adapters.Cowboy2.Handler do
     {__MODULE__, req, {plug, opts}}
   end
 
-  def upgrade(req, env, __MODULE__, {plug, opts}, _timeout, _hibernate) do
+  def upgrade(req, env, __MODULE__, {plug, opts}) do
     conn = @connection.conn(req)
     try do
       %{adapter: {@connection, req}} =
