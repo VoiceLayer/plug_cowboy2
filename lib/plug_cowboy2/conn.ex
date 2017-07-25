@@ -117,9 +117,9 @@ defmodule Plug.Adapters.Cowboy2.Conn do
     Enum.reduce(headers, %{}, fn
       ({key = "set-cookie", value}, acc) ->
         set_cookies = Map.get(acc, key, [])
-        Map.put(acc, key, [value | set_cookies])
+        Map.put(acc, to_string(key), [value | set_cookies])
       ({key, value}, acc) ->
-        Map.put(acc, key, value)
+        Map.put(acc, to_string(key), value)
     end)
   end
 
