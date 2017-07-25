@@ -28,9 +28,9 @@ defmodule PlugCowboy2.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:ranch, github: "ninenines/ranch", ref: "1.3.0", override: true, optional: true},
-     {:cowlib, github: "ninenines/cowlib", ref: "master", override: true, optional: true},
+    [{:ranch, "~> 1.4.0", override: true, optional: true},
+     {:cowlib, github: "ninenines/cowlib", ref: "2.0.0-rc.1", override: true, optional: true},
      {:plug, "~> 1.3.0"},
-     {:cowboy, github: "ninenines/cowboy", ref: "2.0.0-pre.7", override: true, optional: true}]
+     {:cowboy, github: "ninenines/cowboy", ref: "2.0.0-rc.1", override: true, optional: true}]
   end
 end
