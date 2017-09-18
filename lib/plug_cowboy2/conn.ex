@@ -126,7 +126,7 @@ defmodule Plug.Adapters.Cowboy2.Conn do
   ## Multipart
 
   defp parse_multipart({:ok, headers, req}, limit, opts, headers_opts, acc, callback) when limit >= 0 do
-    case callback.(headers) do
+    case callback.(to_headers_list(headers)) do
       {:binary, name} ->
         {:ok, limit, body, req} =
           parse_multipart_body(:cowboy_req.read_part_body(req, opts), limit, opts, "")
